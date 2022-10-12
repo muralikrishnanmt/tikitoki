@@ -1,6 +1,6 @@
 # tikitoki
 
-A new Flutter project.
+A New Social Network to the World.
 
 ## Getting Started
 
