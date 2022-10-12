@@ -1,4 +1,4 @@
-# Tikitoki
+# TikiToki
 
 A New Social Network to the World.
 
