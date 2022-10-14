@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tikitoki/constants.dart';
+import 'package:tikitoki/views/screens/auth/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,24 +9,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      debugShowCheckedModeBanner: false,
+      title: 'TikiToki',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: backgroundColor,
       ),
-      home: const MyHomePage(),
+      home: const LoginScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
