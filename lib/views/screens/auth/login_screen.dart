@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'TikTok Clone',
+              'TikToki',
               style: TextStyle(
                 fontSize: 35,
                 color: buttonColor,

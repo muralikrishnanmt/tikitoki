@@ -5,13 +5,31 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tikitoki/constants.dart';
 import 'package:tikitoki/models/user.dart' as model;
+import 'package:tikitoki/views/screens/auth/login_screen.dart';
+import 'package:tikitoki/views/screens/home_screen.dart';
 
 class AuthController extends GetxController {
   static AuthController instance = Get.find();
-
+  late Rx<User?> _user;
   late Rx<File?> _pickedImage;
 
   File? get profilePhoto => _pickedImage.value;
+
+  @override
+  void onReady() {
+    super.onReady();
+    _user = Rx<User?>(firebaseAuth.currentUser);
+    _user.bindStream(firebaseAuth.authStateChanges());
+    ever(_user, _setInitialScreen);
+  }
+
+  _setInitialScreen(User? user) {
+    if (user == null) {
+      Get.offAll(() => LoginScreen());
+    } else {
+      Get.offAll(() => const HomeScreen());
+    }
+  }
 
   void pickImage() async {
     final pickedImage =
