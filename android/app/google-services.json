@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "298971800280",
+    "project_id": "tikitoki-f30f4",
+    "storage_bucket": "tikitoki-f30f4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298971800280:android:abf9fa12de27ed3b686dad",
+        "android_client_info": {
+          "package_name": "com.example.tikitoki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298971800280-3o510gvnvk2b72j2rvnsf5eudbe6dtk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWCK8gNKlciIyCE1qDJ7o3HPOgpM3_ako"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298971800280-3o510gvnvk2b72j2rvnsf5eudbe6dtk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

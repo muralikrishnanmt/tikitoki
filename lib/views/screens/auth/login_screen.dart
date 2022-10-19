@@ -17,26 +17,26 @@ class LoginScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Tiktok Clone',
+              'TikTok Clone',
               style: TextStyle(
                 fontSize: 35,
                 color: buttonColor,
                 fontWeight: FontWeight.w900,
               ),
             ),
-            Text(
+            const Text(
               'Login',
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w700,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: TextInputField(
@@ -45,21 +45,22 @@ class LoginScreen extends StatelessWidget {
                 icon: Icons.email,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: TextInputField(
                 controller: _passwordController,
                 labelText: 'Password',
                 icon: Icons.lock,
+                isObscure: true,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
@@ -67,15 +68,16 @@ class LoginScreen extends StatelessWidget {
               height: 50,
               decoration: BoxDecoration(
                 color: buttonColor,
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(5),
                 ),
               ),
               child: InkWell(
-                onTap: () {
-                  print('Login User');
-                },
-                child: Center(
+                onTap: () => authController.loginUser(
+                  _emailController.text,
+                  _passwordController.text,
+                ),
+                child: const Center(
                   child: Text(
                     'Login',
                     style: TextStyle(
@@ -86,13 +88,13 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Don\'t have an account? ',
                   style: TextStyle(
                     fontSize: 20,
