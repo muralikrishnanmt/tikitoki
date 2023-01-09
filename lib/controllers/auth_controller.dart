@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tikitoki/constants.dart';
 import 'package:tikitoki/models/user.dart' as model;
 import 'package:tikitoki/views/screens/auth/login_screen.dart';
+import 'package:tikitoki/views/screens/auth/signup_screen.dart';
 import 'package:tikitoki/views/screens/home_screen.dart';
 
 class AuthController extends GetxController {
