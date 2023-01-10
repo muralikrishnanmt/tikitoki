@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:tikitoki/constants.dart';
 import 'package:tikitoki/controllers/auth_controller.dart';
 import 'package:tikitoki/views/screens/auth/login_screen.dart';
-import 'package:tikitoki/views/screens/auth/signup_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

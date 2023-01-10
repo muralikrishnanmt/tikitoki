@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:tikitoki/controllers/upload_video_controller.dart';
 import 'package:tikitoki/views/widgets/text_input_field.dart';
 import 'package:video_player/video_player.dart';
 
@@ -19,8 +21,11 @@ class ConfirmScreen extends StatefulWidget {
 
 class _ConfirmScreenState extends State<ConfirmScreen> {
   late VideoPlayerController controller;
-  TextEditingController songController = TextEditingController();
-  TextEditingController captionController = TextEditingController();
+  final TextEditingController _songController = TextEditingController();
+  final TextEditingController _captionController = TextEditingController();
+
+  UploadVideoController uploadVideoController =
+      Get.put(UploadVideoController());
 
   @override
   void initState() {
@@ -40,7 +45,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             SizedBox(
@@ -48,7 +53,7 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
               height: MediaQuery.of(context).size.height / 1.5,
               child: VideoPlayer(controller),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             SingleChildScrollView(
@@ -57,41 +62,46 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     width: MediaQuery.of(context).size.width - 20,
                     child: TextInputField(
-                      controller: songController,
+                      controller: _songController,
                       labelText: 'Song Name',
                       icon: Icons.music_note,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     width: MediaQuery.of(context).size.width - 20,
                     child: TextInputField(
-                      controller: captionController,
+                      controller: _captionController,
                       labelText: 'Caption',
                       icon: Icons.closed_caption,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Share',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ))
+                    onPressed: () => uploadVideoController.uploadVideo(
+                      _songController.text,
+                      _captionController.text,
+                      widget.videoPath,
+                    ),
+                    child: const Text(
+                      'Share',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
