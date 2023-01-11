@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tikitoki/constants.dart';
+import 'package:tikitoki/views/screens/auth/login_screen.dart';
 import 'package:tikitoki/views/widgets/text_input_field.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -144,7 +145,11 @@ class SignupScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      print("navigating user");
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
                     },
                     child: Text(
                       'Login',
